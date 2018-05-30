@@ -1,0 +1,4 @@
+# Fragen die während der Bearbeitung des Protokolls aufgekommen sind:
+
+- wie gibt ihr das array zurück?
+- warum 1 demensionales array
