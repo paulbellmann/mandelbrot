@@ -1,5 +1,7 @@
 ## Mandelbrot Set
 
+![screenshot](./screenshot.png)
+
 ---
 
 This is a simple Mandelbrot Python backend. It can calculate any given area and returns it values
