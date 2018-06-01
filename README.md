@@ -4,8 +4,8 @@
 
 ---
 
-This is a simple Mandelbrot Python backend. It can calculate any given area and returns it values
-in a array.
+This is a simple Mandelbrot Python backend. It can calculate any given area and returns its values
+in an array.
 
 ### How to run the development server on your system: 
 
