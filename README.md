@@ -10,7 +10,7 @@ in an array.
 ### How to run the development server on your system: 
 
 1. `$ pip install -r requirements.txt`
-2. `$ export FLASK_APP=server.py`
+2. `$ export FLASK_APP=src/server.py`
 3. `$ flask run`
 
 ### How to test the server:
@@ -24,7 +24,7 @@ $ curl --header "Content-Type: application/json" \
 
 ### How to test the Mandelbrot Class:
 
-1. `$ python test_plot.py`
+1. `$ python src/test_plot.py`
 2. watch the plot
 3. change constructor params in `test_plot.py`
 4. repeat steps 1+2

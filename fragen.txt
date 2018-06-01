@@ -2,3 +2,5 @@
 
 - wie gibt ihr das array zurück?
 - warum 1 demensionales array
+- kann mir nicht vorstellen wie der client ein 1D array richtig anzeigen kann ohne weitere
+  Angaben von uns (auflösung, etc)
