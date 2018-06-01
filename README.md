@@ -13,6 +13,8 @@ in an array.
 2. `$ export FLASK_APP=src/server.py`
 3. `$ flask run`
 
+You may need to do some extra steps to install matplotlib, depending on your os.
+
 ### How to test the server:
 
 ```
