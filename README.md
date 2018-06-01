@@ -14,6 +14,7 @@ in an array.
 3. `$ flask run`
 
 You may need to do some extra steps to install matplotlib, depending on your os.
+To make the dev server visible in your network use `$ flask run --host=0.0.0.0`
 
 ### How to test the server:
 
