@@ -1,18 +1,18 @@
 <html>
 
 <body>
-    <canvas id="myCanvas" width="3000" height="3000"></canvas>
+    <canvas id="myCanvas"></canvas>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
-    var canvas = document.getElementById('myCanvas');
-    var context = canvas.getContext('2d');
+    let canvas = document.getElementById('myCanvas');
+    let context = canvas.getContext('2d');
 
-    var data = { "realFrom": -2, "realTo": 1, "imgFrom": -1, "imgTo": 1, "interval": 0.01, "max_iter": 255 }
-    var myArr;
+    let data = { "RealFrom": -2, "RealTo": 1, "ImaginaryFrom": -1, "ImaginaryTo": 1, "Intervall": 0.01, "MaxIteration": 255 }
+    let myArr;
 
     $(function() {
-        console.log( "ready!" );
 
+        // post request to the server
         $.ajax({
             type: "POST",
             url: "http://localhost:8080",
@@ -26,28 +26,23 @@
         });
 
         // (realTo - realFrom) / interval
-        var a =  (data.realTo - data.realFrom) / data.interval
-        var y = 0
-        var x = 0
-        var counter = 0
+        let row = Math.abs(data.RealTo / data.Intervall) + Math.abs(data.RealFrom / data.Intervall);
+        let column = Math.abs(data.ImaginaryFrom / data.Intervall) + Math.abs(data.ImaginaryTo / data.Intervall);
+        let counter = 0;
 
-        console.log(a);
+        // set right canvas width and height
+        canvas.width = row;
+        canvas.height = column;
 
-        for (var i = 0; i < myArr.length; i++) {
-            context.beginPath();
-            context.rect(x*4, y*4, 4, 4);
-            // context.fillStyle = '#' + myArr[i];
-            // context.fillStyle ='#'+myArr[i]+myArr[i]+myArr[i];
-            var color=myArr[i].toString(16);
-            context.fillStyle ='#'+color+color+color;
-            context.fill();
-            counter++;
-            x++
-
-            if (counter >= a) {
-                y += 1;
-                counter = 0;
-                x = 0;
+        // loop through response, draw pixel
+        for (let x = 0; x < row; x++) {
+            for (let y = 0; y < column; y++) {
+                var color = myArr[counter].toString(16);
+                context.beginPath();
+                context.rect(x, y, 1, 1);
+                context.fillStyle ='#'+color+color+color;
+                context.fill();
+                counter++;
             }
         }
     });
