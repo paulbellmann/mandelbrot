@@ -21,7 +21,7 @@ To make the dev server visible in your network use `$ flask run --host=0.0.0.0`
 ```
 $ curl --header "Content-Type: application/json" \
        --request POST \
-       --data '{"realFrom":-2, "realTo":1, "imgFrom": -1, "imgTo":1, "interval": 0.01, "max_iter": 100}' \
+       --data '{"RealFrom":-2, "RealTo":1, "ImaginaryFrom": -1, "ImaginaryTo":1, "Intervall": 0.01, "MaxIteration": 100}' \
        http://localhost:8080
 ```
 

@@ -13,9 +13,9 @@ def hello():
     content = request.get_json()
 
     mandel = Mandelbrot(
-            content['realFrom'], content['realTo'], 
-            content['imgFrom'], content['imgTo'],
-            content['interval'], content['max_iter'],
+            content['RealFrom'], content['RealTo'], 
+            content['ImaginaryFrom'], content['ImaginaryTo'],
+            content['Intervall'], content['MaxIteration'],
         )
 
     # safes the array
