@@ -1,5 +1,5 @@
 from mandelbrot import Mandelbrot
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -7,8 +7,8 @@ CORS(app)
 
 app.debug = True
 
-@app.route("/", methods=['GET', 'POST'])
-def hello():
+@app.route("/", methods=['POST'])
+def api():
     # gets json from the post request
     content = request.get_json()
 
@@ -24,3 +24,8 @@ def hello():
     mandel1Darray = mandel2Darray.ravel().tolist()
 
     return jsonify(mandel1Darray)
+
+
+@app.route('/client')
+def client():
+    return render_template('client.html')

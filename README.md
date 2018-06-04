@@ -27,7 +27,16 @@ $ curl --header "Content-Type: application/json" \
 
 ### How to test the Mandelbrot Class:
 
+Either:
+
+1. go to http://localhost:8080/client
+2. watch the mandelbrot
+3. change variables in `src/templates/client.html`
+4. repeat steps 1+2
+
+Or:
+
 1. `$ python src/test_plot.py`
 2. watch the plot
-3. change constructor params in `test_plot.py`
+3. change constructor params in `src/test_plot.py`
 4. repeat steps 1+2
