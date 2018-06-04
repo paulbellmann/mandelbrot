@@ -11,7 +11,7 @@ in an array.
 
 1. `$ pip install -r requirements.txt`
 2. `$ export FLASK_APP=src/server.py`
-3. `$ flask run`
+3. `$ flask run --host=0.0.0.0 --port=8080`
 
 You may need to do some extra steps to install matplotlib, depending on your os.
 To make the dev server visible in your network use `$ flask run --host=0.0.0.0`
@@ -22,7 +22,7 @@ To make the dev server visible in your network use `$ flask run --host=0.0.0.0`
 $ curl --header "Content-Type: application/json" \
        --request POST \
        --data '{"realFrom":-2, "realTo":1, "imgFrom": -1, "imgTo":1, "interval": 0.01, "max_iter": 100}' \
-       http://localhost:5000
+       http://localhost:8080
 ```
 
 ### How to test the Mandelbrot Class:
