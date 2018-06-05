@@ -1,6 +1,8 @@
 import numpy
 import matplotlib.pyplot as plt
 
+""" Hallo Paul! LG s"""
+
 class Mandelbrot(object):
     """Creates a Mandelbrot object with various constructor parameters"""
 

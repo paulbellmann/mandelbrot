@@ -6,3 +6,5 @@
   Angaben von uns (auflösung, umbruch, etc)
   - OK doch, so kann man es herrausfinden:
   - (realTo - realFrom) / interval => wie viel in einer zeile, ab wann umbruch
+- CORS
+- contenttype

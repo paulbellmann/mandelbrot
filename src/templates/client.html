@@ -1,6 +1,11 @@
 <html>
 
 <body>
+    <div>
+        <input type="text" id="ip" placeholder="IP" value="http://localhost:8080">
+        <button id="renderBtn">Render</button><br>
+    </div>
+
     <canvas id="myCanvas"></canvas>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
@@ -11,19 +16,14 @@
     let myArr;
 
     $(function() {
-        // post request to the server
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:8080",
-            data: JSON.stringify(data),
-            contentType: "application/json",
-            async: false,
-            success: function(res) {
-                console.log("success");
-                myArr = res;
-            }
-        });
+        // add clickevents
+        $('#renderBtn').on('click', function(e) {
+            doCalc($('#ip').val())
+        })
 
+    });
+
+    function drawBrot() {
         // calculate rows and columns
         let row = Math.abs(data.RealTo / data.Intervall) + Math.abs(data.RealFrom / data.Intervall);
         let column = Math.abs(data.ImaginaryFrom / data.Intervall) + Math.abs(data.ImaginaryTo / data.Intervall);
@@ -44,7 +44,22 @@
                 counter++;
             }
         }
-    });
+    }
+
+    function doCalc(ip) {
+        // post request to the server
+        $.ajax({
+            type: "POST",
+            url: ip,
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: function(res) {
+                console.log("success");
+                myArr = res;
+                drawBrot()
+            }
+        });
+    }
     </script>
 </body>
 
